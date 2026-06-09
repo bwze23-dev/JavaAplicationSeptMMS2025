@@ -59,10 +59,22 @@ public class SwitchCaseStatement{
 			    System.out.printf("Subject: %s%n".subject);
 		        System.out.printf("Score: %d%n".score);
 			    System.out.println("Grade: E");
-			break;				
+			break;
+			case 7:
 			case 8:
 			case 9:
 			case 10:
+			    System.out.printf("Full Name: %s%n".name);
+			    System.out.printf("Subject: %s%n".subject);
+		        System.out.printf("Score: %d%n".score);
+			    System.out.println("Grade: A\n");
+			break;
+			default:
+			    System.out.println("Invalid Score inputed");
+
+			
+				
+			
 						
 			
 		}	

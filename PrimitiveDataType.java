@@ -22,7 +22,7 @@ public class PrimitiveDataType{
 		System.out.printf("There is an increment in the world's population by 20.5$c%n",symbol);
 		
 		boolean isJavaFun = true;
-		System.out.printf("Do you love Java? %b",isJavaFun);
+		System.out.printF("Do you love Java? %b",isJavaFun);
 		
 
 		
