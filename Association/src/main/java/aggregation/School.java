@@ -1,25 +1,32 @@
 
 package aggregation;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class School {
     private String schoolName;
-    private ArrayList<Student> student;
+    private List<Student> student;
+
     
     
-    
-    public School(String schoolName,ArrayList<Student> student){
+    public School(String schoolName, List<Student> student){
         this.schoolName = schoolName;
         this.student = student;
     }
     
     public void displayStudentDetails(){
-        System.out.printf("School Name: %s%n",schoolName);
+        
+        System.out.println();
+        System.out.println("        SCHOOL INFORMATION");
+        System.out.println("=============================================");
+        System.out.println("School Name: " + schoolName);
+        System.out.println("Number of Students: " + student.size());
+        System.out.println("=============================================");
         
         for(Student students:student){
             students.displayStudentDetails();
         }
+        
     }
     
 }
