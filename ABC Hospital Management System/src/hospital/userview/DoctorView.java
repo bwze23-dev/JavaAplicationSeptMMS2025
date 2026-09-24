@@ -6,244 +6,68 @@ import java.util.List;
 
 public class DoctorView {
 
-    // =========================================================
-    // DISPLAY ALL DOCTORS
-    // =========================================================
+    public void displayDoctors(List<Doctor> doctors) {
 
-    public void displayDoctors(
-            List<Doctor> doctors
-    ) {
-
-        if (doctors == null ||
-                doctors.isEmpty()) {
-
-            System.out.println(
-                    "No doctors found."
-            );
-
+        if (doctors == null || doctors.isEmpty()) {
+            System.out.println();
+            System.out.println("No doctors found.");
             return;
         }
 
         System.out.println();
-
-        System.out.println(
-                "=========================================================================================================================================================================="
-        );
-
-        System.out.printf(
-                "%-5s %-12s %-12s %-7s %-12s %-15s %-22s %-18s %-18s %-18s %-12s%n",
-                "Doctor ID",
-                "First Name",
-                "Last Name",
-                "Gender",
-                "Phone",
-                "City",
-                "Department",
-                "Specialization",
-                "License No.",
-                "Employment Date",
-                "Salary"
-        );
-
-        System.out.println(
-                "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
-        );
+        System.out.println("========================================================================================");
+        System.out.printf("%-6s %-25s %-20s %-20s %-14s%n",
+                "ID", "NAME", "DEPARTMENT", "SPECIALIZATION", "LICENSE");
+        System.out.println("========================================================================================");
 
         for (Doctor doctor : doctors) {
-
-            String departmentName =
-                    "N/A";
-
-            if (doctor.getDepartment() != null) {
-
-                departmentName =
-                        doctor.getDepartment()
-                                .getName();
-            }
-
-            System.out.printf(
-                    "%-5d %-12s %-12s %-7s %-12s %-15s %-22s %-18s %-18s %-18s %-12.2f%n",
-
-                    doctor.getStaffId(),
-                    doctor.getFirstName(),
-                    doctor.getLastName(),
-                    doctor.getGender(),
-                    doctor.getPhone(),
-                    doctor.getCity(),
-                    departmentName,
-                    doctor.getSpecialization(),
-                    doctor.getLicenseNumber(),
-                    doctor.getEmploymentDate(),
-                    doctor.getSalary()
-            );
+            System.out.printf("%-6d %-25s %-20s %-20s %-14s%n",
+                    doctor.getStaffID(),
+                    "Dr. " + doctor.getFirstName() + " " + doctor.getLastName(),
+                    doctor.getDepartment() != null ? doctor.getDepartment().getName() : "",
+                    doctor.getSpecialization() != null ? doctor.getSpecialization() : "",
+                    doctor.getLicenseNumber() != null ? doctor.getLicenseNumber() : "");
         }
 
-        System.out.println(
-                "=========================================================================================================================================================================="
-        );
+        System.out.println("========================================================================================");
     }
 
-
-    // =========================================================
-    // DISPLAY ONE DOCTOR
-    // =========================================================
-
-    public void displayDoctor(
-            Doctor doctor
-    ) {
+    public void displayDoctor(Doctor doctor) {
 
         if (doctor == null) {
-
-            System.out.println(
-                    "Doctor not found."
-            );
-
+            System.out.println("Doctor not found.");
             return;
         }
 
-        String departmentName =
-                "N/A";
-
-        int departmentId = 0;
-
-        if (doctor.getDepartment() != null) {
-
-            departmentId =
-                    doctor.getDepartment()
-                            .getId();
-
-            departmentName =
-                    doctor.getDepartment()
-                            .getName();
-        }
-
-
         System.out.println();
+        System.out.println("==============================================");
+        System.out.println("              DOCTOR DETAILS");
+        System.out.println("==============================================");
+        System.out.println("Staff ID       : " + doctor.getStaffID());
+        System.out.println("Name           : Dr. " + doctor.getFirstName() + " " + doctor.getLastName());
+        System.out.println("Gender         : " + doctor.getGender());
+        System.out.println("Phone          : " + doctor.getPhone());
+        System.out.println("Email          : " + doctor.getEmail());
+        System.out.println("Department     : " + (doctor.getDepartment() != null ? doctor.getDepartment().getName() : "N/A"));
+        System.out.println("Specialization : " + doctor.getSpecialization());
+        System.out.println("License Number : " + doctor.getLicenseNumber());
+        System.out.println("Employment Date: " + doctor.getEmploymentDate());
+        System.out.println("Salary         : " + doctor.getSalary());
+        System.out.println("==============================================");
+    }
 
-        System.out.println(
-                "======================================================"
-        );
+    public void displayDoctorRegistered() {
+        System.out.println();
+        System.out.println("Doctor registered successfully.");
+    }
 
-        System.out.println(
-                "                  DOCTOR DETAILS"
-        );
+    public void displayDoctorUpdated() {
+        System.out.println();
+        System.out.println("Doctor updated successfully.");
+    }
 
-        System.out.println(
-                "======================================================"
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Staff ID",
-                doctor.getStaffId()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "First Name",
-                doctor.getFirstName()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Last Name",
-                doctor.getLastName()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Gender",
-                doctor.getGender()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Date of Birth",
-                doctor.getDateOfBirth()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Phone",
-                doctor.getPhone()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Email",
-                doctor.getEmail()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Street",
-                doctor.getStreet()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "City",
-                doctor.getCity()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Country",
-                doctor.getCountry()
-        );
-
-        System.out.println(
-                "------------------------------------------------------"
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Staff ID",
-                doctor.getStaffId()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Employment Date",
-                doctor.getEmploymentDate()
-        );
-
-        System.out.printf(
-                "%-20s : %.2f%n",
-                "Salary",
-                doctor.getSalary()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Department ID",
-                departmentId
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Department",
-                departmentName
-        );
-
-        System.out.println(
-                "------------------------------------------------------"
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "Specialization",
-                doctor.getSpecialization()
-        );
-
-        System.out.printf(
-                "%-20s : %s%n",
-                "License Number",
-                doctor.getLicenseNumber()
-        );
-
-        System.out.println(
-                "======================================================"
-        );
+    public void displayDoctorDeleted() {
+        System.out.println();
+        System.out.println("Doctor deleted successfully.");
     }
 }

@@ -3,32 +3,21 @@ package hospital.models;
 
 import java.time.LocalDate;
 
+
 public class Doctor extends Staff{
     private String specialization;
     private String licenseNumber;
     
-    
     public Doctor(){
-        
     }
 
-    public Doctor(
-              String firstName, 
-            String lastName, 
-            char gender, 
-            LocalDate dateOfBirth, 
-            String phone, 
-            String email, 
-            String street, 
-            String city, 
-            String country,
-            int staffId,
-            LocalDate employmentDate, 
-            double salary,
-            Department department,
-            String specialization, 
-            String licenseNumber ) {
-        super(firstName, lastName, gender, dateOfBirth, phone, email, street, city, country,staffId, employmentDate, salary, department);
+    public Doctor(String firstName, String lastName, char gender,
+            LocalDate dateOfBirth, String phone, String email,
+            String street, String city, String country, int staffID,
+            LocalDate employmentDate, double salary, Department department,
+            String specialization, String licenseNumber) {
+        super(firstName, lastName, gender, dateOfBirth, phone, email, street, 
+                city, country, staffID, employmentDate, salary, department);
         this.specialization = specialization;
         this.licenseNumber = licenseNumber;
     }
@@ -47,13 +36,7 @@ public class Doctor extends Staff{
 
     public void setLicenseNumber(String licenseNumber) {
         this.licenseNumber = licenseNumber;
-    }   
-
-    public void setStaffId(int staffId) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
     
     
 }
-

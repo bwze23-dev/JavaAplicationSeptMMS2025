@@ -1,27 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package hospital.models;
 
 import java.time.LocalDateTime;
 
-/**
- *
- * @author ERONMWON
- */
+
 public class LaboratoryTest {
-    private int id; 
-    private Patient patient; 
-    private LaboratoryTechnician technician; 
-    private String testName; 
-    private LocalDateTime testDate; 
-    private String result; 
-    private String referenceRange; 
+    private int id;
+    private Patient patient;
+    private LaboratoryTechnician technician;
+    private String testName;
+    private LocalDateTime testDate;
+    private String result;
+    private String referenceRange;
     private String status;
     
     public LaboratoryTest(){
-    
     }
 
     public int getId() {
@@ -31,6 +24,8 @@ public class LaboratoryTest {
     public void setId(int id) {
         this.id = id;
     }
+
+
 
     public Patient getPatient() {
         return patient;

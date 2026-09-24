@@ -1,25 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package hospital.models;
 
-/**
- *
- * @author ERONMWON
- */
 public class Bed {
-    private int id; 
-    private String bedNumber ; 
-    private Room room; 
-    private boolean occupied;
-    
+    private int id;
+    private String bedNumber;
+    private Room room;
+    private String status;
+
     public Bed(){
-    
     }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getBedNumber() {
@@ -38,14 +34,11 @@ public class Bed {
         this.room = room;
     }
 
-    public boolean isOccupied() {
-        return occupied;
+    public String getStatus() {
+        return status;
     }
 
-    public void setOccupied(boolean occupied) {
-        this.occupied = occupied;
+    public void setStatus(String status) {
+        this.status = status;
     }
-    
-    
-    
 }

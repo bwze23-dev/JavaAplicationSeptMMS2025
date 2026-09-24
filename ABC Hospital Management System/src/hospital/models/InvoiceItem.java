@@ -1,36 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package hospital.models;
 
-/**
- *
- * @author ERONMWON
- */
 public class InvoiceItem {
-    private int id; 
-    private Invoice invoice; 
-    private String description; 
-    private int quantity; 
-    private double unitPrice; 
-    private double amount; 
+    private int id;
+    private String description;
+    private int quantity;
+    private double unitPrice;
+    private double amount;
     
     public InvoiceItem(){
-    
+        
     }
 
     public int getId() {
         return id;
     }
 
-    public Invoice getInvoice() {
-        return invoice;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setInvoice(Invoice invoice) {
-        this.invoice = invoice;
-    }
+
 
     public String getDescription() {
         return description;
@@ -69,4 +59,5 @@ public class InvoiceItem {
     private void calculateAmount(){
         this.amount = quantity * unitPrice;
     }
+    
 }

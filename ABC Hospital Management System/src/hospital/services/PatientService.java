@@ -13,57 +13,82 @@ public class PatientService {
         patientDAO = new PatientDAO();
     }
 
+    // =========================================================
+    // REGISTER PATIENT
+    // =========================================================
+
     public boolean registerPatient(Patient patient) {
 
-        if (patient.getFirstName() == null ||
-                patient.getFirstName().isBlank()) {
-
-            System.out.println(
-                    "First name is required."
-            );
-
+        if (patient == null) {
+            System.out.println("Patient cannot be null.");
             return false;
         }
 
-        if (patient.getLastName() == null ||
-                patient.getLastName().isBlank()) {
-
-            System.out.println(
-                    "Last name is required."
-            );
-
+        if (patient.getFirstName() == null || patient.getFirstName().trim().isEmpty()) {
+            System.out.println("First name is required.");
             return false;
         }
 
-        if (patient.getDateOfBirth() == null) {
-
-            System.out.println(
-                    "Date of birth is required."
-            );
-
+        if (patient.getLastName() == null || patient.getLastName().trim().isEmpty()) {
+            System.out.println("Last name is required.");
             return false;
         }
 
         return patientDAO.addPatient(patient);
     }
 
-    public List<Patient> getAllPatients() {
+    // =========================================================
+    // GET ALL PATIENTS
+    // =========================================================
 
+    public List<Patient> getAllPatients() {
         return patientDAO.findAllPatient();
     }
 
-    public Patient getPatientById(int id) {
+    // =========================================================
+    // GET PATIENT BY ID
+    // =========================================================
 
-        return patientDAO.findPatientById(id);
+    public Patient getPatientById(int patientId) {
+
+        if (patientId <= 0) {
+            System.out.println("Invalid patient ID.");
+            return null;
+        }
+
+        return patientDAO.findPatientById(patientId);
     }
 
+    // =========================================================
+    // UPDATE PATIENT
+    // =========================================================
+
     public boolean updatePatient(Patient patient) {
+
+        if (patient == null) {
+            System.out.println("Patient cannot be null.");
+            return false;
+        }
+
+        if (patient.getPatientID() <= 0) {
+            System.out.println("Invalid patient ID.");
+            return false;
+        }
 
         return patientDAO.update(patient);
     }
 
-    public boolean deletePatient(int id) {
+    // =========================================================
+    // DELETE PATIENT
+    // =========================================================
 
-        return patientDAO.delete(id);
+    public boolean deletePatient(int patientId) {
+
+        if (patientId <= 0) {
+            System.out.println("Invalid patient ID.");
+            return false;
+        }
+
+        return patientDAO.delete(patientId);
     }
 }

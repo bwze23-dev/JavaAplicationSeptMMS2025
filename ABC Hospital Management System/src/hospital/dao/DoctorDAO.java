@@ -228,7 +228,7 @@ public class DoctorDAO {
 
             connection.commit();
 
-            doctor.setStaffId(staffId);
+            doctor.setStaffID(staffId);
 
             System.out.println(
                     "Doctor inserted successfully."
@@ -315,7 +315,7 @@ public class DoctorDAO {
                     p.City,
                     p.Country,
 
-                    dep.Name
+                    dep.Name AS DepartmentName
 
                 FROM Doctor d
 
@@ -391,7 +391,7 @@ public class DoctorDAO {
                     p.City,
                     p.Country,
 
-                    dep.Name
+                    dep.Name AS DepartmentName
 
                 FROM Doctor d
 
@@ -505,7 +505,7 @@ public class DoctorDAO {
             int personId =
                     getPersonId(
                             connection,
-                            doctor.getStaffId()
+                        doctor.getStaffID()
                     );
 
             if (personId == -1) {
@@ -620,7 +620,7 @@ public class DoctorDAO {
 
                 statement.setInt(
                         4,
-                        doctor.getStaffId()
+                        doctor.getStaffID()
                 );
 
                 statement.executeUpdate();
@@ -650,7 +650,7 @@ public class DoctorDAO {
 
                 statement.setInt(
                         3,
-                        doctor.getStaffId()
+                        doctor.getStaffID()
                 );
 
                 statement.executeUpdate();
@@ -929,7 +929,7 @@ public class DoctorDAO {
         // STAFF ID
         // =====================================================
 
-        doctor.setStaffId(
+        doctor.setStaffID(
                 resultSet.getInt(
                         "StaffId"
                 )
@@ -1046,7 +1046,7 @@ public class DoctorDAO {
 
         department.setName(
                 resultSet.getString(
-                        "Name"
+                        "DepartmentName"
                 )
         );
 

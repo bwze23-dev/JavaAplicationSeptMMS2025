@@ -1,26 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package hospital.models;
 
 import java.time.LocalDate;
 
-/**
- *
- * @author ERONMWON
- */
 public class Diagnosis {
-    private int id; 
-    private Patient patient; 
-    private Doctor doctor; 
-    private LocalDate diagnosisDate; 
-    private String condition;
-    private String description; 
-    private String notes; 
-    
+    private int id;
+    private Patient patient;
+    private Doctor doctor;
+    private String diagnosisName;
+    private String description;
+    private LocalDate diagnosisDate;
+    private String status;
+
     public Diagnosis(){
-    
     }
 
     public int getId() {
@@ -47,20 +39,12 @@ public class Diagnosis {
         this.doctor = doctor;
     }
 
-    public LocalDate getDiagnosisDate() {
-        return diagnosisDate;
+    public String getDiagnosisName() {
+        return diagnosisName;
     }
 
-    public void setDiagnosisDate(LocalDate diagnosisDate) {
-        this.diagnosisDate = diagnosisDate;
-    }
-
-    public String getCondition() {
-        return condition;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
+    public void setDiagnosisName(String diagnosisName) {
+        this.diagnosisName = diagnosisName;
     }
 
     public String getDescription() {
@@ -71,12 +55,19 @@ public class Diagnosis {
         this.description = description;
     }
 
-    public String getNotes() {
-        return notes;
+    public LocalDate getDiagnosisDate() {
+        return diagnosisDate;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setDiagnosisDate(LocalDate diagnosisDate) {
+        this.diagnosisDate = diagnosisDate;
     }
-    
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

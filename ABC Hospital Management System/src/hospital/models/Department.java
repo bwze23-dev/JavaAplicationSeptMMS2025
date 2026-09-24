@@ -4,23 +4,22 @@ package hospital.models;
 public class Department {
     private int id;
     private String name;
-    private String description;
-    private String location;
-    
+    private String headOfDepartment;
+
     public Department(){
-        
     }
 
-    public Department(String name, 
-            String description, 
-            String location) {
+    public Department(String name, String headOfDepartment) {
         this.name = name;
-        this.description = description;
-        this.location = location;
+        this.headOfDepartment = headOfDepartment;
     }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -31,26 +30,11 @@ public class Department {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getHeadOfDepartment() {
+        return headOfDepartment;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setHeadOfDepartment(String headOfDepartment) {
+        this.headOfDepartment = headOfDepartment;
     }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public void setId(int aInt) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
-    
 }

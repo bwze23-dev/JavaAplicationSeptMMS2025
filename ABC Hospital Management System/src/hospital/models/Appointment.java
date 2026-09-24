@@ -4,16 +4,23 @@ package hospital.models;
 import java.time.LocalDateTime;
 
 public class Appointment {
-  private int id;
-  private Patient patient;
-  private Doctor doctor; 
-  private LocalDateTime appointmentDate; 
-  private String reason; 
-  private String status;
-  private String notes; 
+    private int id;
+    private Patient patient;
+    private Doctor doctor;
+    private LocalDateTime appointmentDate;
+    private String reason;
+    private String status;
+    private String notes;
+
+    public Appointment(){
+    }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Patient getPatient() {
@@ -63,11 +70,4 @@ public class Appointment {
     public void setNotes(String notes) {
         this.notes = notes;
     }
-
-    public void setId(int aInt) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-  
-  
-  
 }

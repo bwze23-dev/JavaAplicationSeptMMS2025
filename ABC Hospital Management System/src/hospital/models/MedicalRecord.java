@@ -1,28 +1,31 @@
 
 package hospital.models;
 
+import java.util.List;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MedicalRecord {
+    private int id;
+    private Patient patient;
+    private LocalDate createdDate;
     
-    private int id; 
-    private Patient patient; 
-    private LocalDate createdDate; 
-    
-    private List<Diagnosis> diagnosis = new ArrayList<>();
+    private List<Diagnosis> diagnoses = new ArrayList<>();
     private List<Treatment> treatment = new ArrayList<>();
-    private List<LaboratoryTest> laboratoryTest = new ArrayList<>();
+    private List<LaboratoryTest> laboratoryTests = new ArrayList<>();
     private List<Prescription> prescription = new ArrayList<>();
     private List<Admission> admission = new ArrayList<>();
     
     public MedicalRecord(){
-    
+        
     }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 
@@ -43,12 +46,12 @@ public class MedicalRecord {
         this.createdDate = createdDate;
     }
 
-    public List<Diagnosis> getDiagnosis() {
-        return diagnosis;
+    public List<Diagnosis> getDiagnoses() {
+        return diagnoses;
     }
 
-    public void setDiagnosis(List<Diagnosis> diagnosis) {
-        this.diagnosis = diagnosis;
+    public void setDiagnoses(List<Diagnosis> diagnoses) {
+        this.diagnoses = diagnoses;
     }
 
     public List<Treatment> getTreatment() {
@@ -59,12 +62,12 @@ public class MedicalRecord {
         this.treatment = treatment;
     }
 
-    public List<LaboratoryTest> getLaboratoryTest() {
-        return laboratoryTest;
+    public List<LaboratoryTest> getLaboratoryTests() {
+        return laboratoryTests;
     }
 
-    public void setLaboratoryTest(List<LaboratoryTest> laboratoryTest) {
-        this.laboratoryTest = laboratoryTest;
+    public void setLaboratoryTests(List<LaboratoryTest> laboratoryTests) {
+        this.laboratoryTests = laboratoryTests;
     }
 
     public List<Prescription> getPrescription() {

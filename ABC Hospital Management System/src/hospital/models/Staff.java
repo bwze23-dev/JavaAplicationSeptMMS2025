@@ -4,47 +4,45 @@ package hospital.models;
 import java.time.LocalDate;
 
 public abstract class Staff extends Person{
-    private int staffId;
+    private int staffID;
     private LocalDate employmentDate;
     private double salary;
     private Department department;
     
     public Staff(){
-        
     }
 
-    public Staff( 
-            String firstName, 
-            String lastName, 
-            char gender, 
-            LocalDate dateOfBirth, 
-            String phone, 
-            String email, 
-            String street, 
-            String city, 
-            String country,
-            int staffId, 
-            LocalDate employmentDate, 
-            double salary,
-            Department department) {
-        super(firstName, lastName, gender, dateOfBirth, phone, email, street, city, country);
-        this.staffId = staffId;
+    public Staff(String firstName, String lastName, char gender,
+            LocalDate dateOfBirth, String phone, String email, 
+            String street, String city, String country,
+            int staffID, LocalDate employmentDate, 
+            double salary, Department department) {
+        super(firstName, lastName, gender, dateOfBirth, phone, email, 
+                street, city, country);
+        this.staffID = staffID;
         this.employmentDate = employmentDate;
         this.salary = salary;
         this.department = department;
     }
 
-    public Department getDepartment() {
+    public Department getDepartment(){
         return department;
     }
-
-    public void setDepartment(Department department) {
+    
+    public void setDepartment(Department department){
         this.department = department;
+        
     }
+    
+    public int getStaffID() {
+        return staffID;
+    }
+    
+    public void setStaffID(int staffID){
+        this.staffID = staffID;
+    }
+    
 
-    public int getStaffId() {
-        return staffId;
-    }
     public LocalDate getEmploymentDate() {
         return employmentDate;
     }
@@ -60,6 +58,11 @@ public abstract class Staff extends Person{
     public void setSalary(double salary) {
         this.salary = salary;
     }
+    
+   
+
+    
+    
     
     
 }

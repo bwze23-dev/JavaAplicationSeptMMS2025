@@ -1,23 +1,25 @@
 
 package hospital.models;
 
+
 public class PrescriptionItem {
-    private int id; 
-    private Prescription prescription; 
-    private Medication medication; 
-    private String dosage; 
-    private String frequency; 
-    private int duration; 
-    private String durationUnit; 
-    private String instructions; 
+    private int id;
+    private Prescription prescription;
+    private Medication medication;
+    private String dosage;
+    private String frequency;
+    private int duration;
+    private String durationUnit;
+    private String instructions;
     
     public PrescriptionItem(){
-    
     }
 
     public int getId() {
         return id;
     }
+
+
 
     public Prescription getPrescription() {
         return prescription;
@@ -74,5 +76,6 @@ public class PrescriptionItem {
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
+    
     
 }

@@ -2,67 +2,41 @@ package hospital.userview;
 
 import hospital.models.Patient;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class PatientView {
 
-    // Display all patients
- public void displayPatients(List<Patient> patients) {
+    private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-    if (patients == null || patients.isEmpty()) {
-        System.out.println("No patients found.");
-        return;
+    public void displayPatients(List<Patient> patients) {
+
+        if (patients == null || patients.isEmpty()) {
+            System.out.println();
+            System.out.println("No patients found.");
+            return;
+        }
+
+        System.out.println();
+        System.out.println("========================================================================================");
+        System.out.printf("%-6s %-25s %-4s %-12s %-8s %-14s %-10s%n",
+                "ID", "NAME", "SEX", "PHONE", "BLOOD", "EMERGENCY", "EMG PHONE");
+        System.out.println("========================================================================================");
+
+        for (Patient patient : patients) {
+            System.out.printf("%-6d %-25s %-4c %-12s %-8s %-14s %-10s%n",
+                    patient.getPatientID(),
+                    patient.getFirstName() + " " + patient.getLastName(),
+                    patient.getGender(),
+                    patient.getPhone() != null ? patient.getPhone() : "",
+                    patient.getBloodGroup() != null ? patient.getBloodGroup() : "",
+                    patient.getEmergencyContact() != null ? patient.getEmergencyContact() : "",
+                    patient.getEmergencyPhone() != null ? patient.getEmergencyPhone() : "");
+        }
+
+        System.out.println("========================================================================================");
     }
 
-    System.out.println();
-
-    System.out.println(
-            "==========================================================================================================================================="
-    );
-
-    System.out.printf(
-            "%-4s %-12s %-12s %-6s %-10s %-12s %-25s %-15s %-11s %-9s %-20s%n",
-            "ID",
-            "First Name",
-            "Last Name",
-            "Gender",
-            "DOB",
-            "Phone",
-            "Email",
-            "City",
-            "Blood Grp",
-            "Genotype",
-            "Allergies"
-    );
-
-    System.out.println(
-            "-------------------------------------------------------------------------------------------------------------------------------------------"
-    );
-
-    for (Patient patient : patients) {
-
-        System.out.printf(
-                "%-4d %-12s %-12s %-6s %-10s %-12s %-25s %-15s %-11s %-9s %-20s%n",
-                patient.getPatientId(),
-                patient.getFirstName(),
-                patient.getLastName(),
-                patient.getGender(),
-                patient.getDateOfBirth(),
-                patient.getPhone(),
-                patient.getEmail(),
-                patient.getCity(),
-                patient.getBloodGroup(),
-                patient.getGenotype(),
-                patient.getAllergies()
-        );
-    }
-
-    System.out.println(
-            "==========================================================================================================================================="
-    );
-}
-
-    // Display one patient by ID
     public void displayPatient(Patient patient) {
 
         if (patient == null) {
@@ -72,30 +46,35 @@ public class PatientView {
 
         System.out.println();
         System.out.println("==============================================");
-        System.out.println("              PATIENT DETAILS");
+        System.out.println("             PATIENT DETAILS");
         System.out.println("==============================================");
-
-        System.out.printf("%-20s : %s%n", "Patient ID", patient.getPatientId());
-        System.out.printf("%-20s : %s%n", "First Name", patient.getFirstName());
-        System.out.printf("%-20s : %s%n", "Last Name", patient.getLastName());
-        System.out.printf("%-20s : %s%n", "Gender", patient.getGender());
-        System.out.printf("%-20s : %s%n", "Date of Birth", patient.getDateOfBirth());
-        System.out.printf("%-20s : %s%n", "Phone", patient.getPhone());
-        System.out.printf("%-20s : %s%n", "Email", patient.getEmail());
-        System.out.printf("%-20s : %s%n", "Blood Group", patient.getBloodGroup());
-        System.out.printf("%-20s : %s%n", "Genotype", patient.getGenotype());
-        System.out.printf("%-20s : %s%n", "Allergies", patient.getAllergies());
-        System.out.printf(
-                "%-20s : %s%n",
-                "Emergency Contact",
-                patient.getEmergencyContact()
-        );
-        System.out.printf(
-                "%-20s : %s%n",
-                "Emergency Phone",
-                patient.getEmergencyPhone()
-        );
-
+        System.out.println("Patient ID       : " + patient.getPatientID());
+        System.out.println("Name             : " + patient.getFirstName() + " " + patient.getLastName());
+        System.out.println("Gender           : " + patient.getGender());
+        System.out.println("Date of Birth    : " + (patient.getDateOfBirth() != null ? patient.getDateOfBirth().format(dateFormatter) : "N/A"));
+        System.out.println("Phone            : " + patient.getPhone());
+        System.out.println("Email            : " + patient.getEmail());
+        System.out.println("Address          : " + patient.getStreet() + ", " + patient.getCity() + ", " + patient.getCountry());
+        System.out.println("Blood Group      : " + patient.getBloodGroup());
+        System.out.println("Genotype         : " + patient.getGenotype());
+        System.out.println("Allergies        : " + patient.getAllergies());
+        System.out.println("Emergency Contact: " + patient.getEmergencyContact());
+        System.out.println("Emergency Phone  : " + patient.getEmergencyPhone());
         System.out.println("==============================================");
+    }
+
+    public void displayPatientRegistered() {
+        System.out.println();
+        System.out.println("Patient registered successfully.");
+    }
+
+    public void displayPatientUpdated() {
+        System.out.println();
+        System.out.println("Patient updated successfully.");
+    }
+
+    public void displayPatientDeleted() {
+        System.out.println();
+        System.out.println("Patient deleted successfully.");
     }
 }

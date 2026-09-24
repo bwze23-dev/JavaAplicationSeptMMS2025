@@ -2,27 +2,37 @@
 package hospital.models;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Prescription {
-   private int id;
-   private Patient patient; 
-   private Doctor doctor; 
-   private LocalDate prescriptionDate;
-   private List<PrescriptionItem> items = new ArrayList<>(); 
-   
-   public void addItem(PrescriptionItem item){
-       items.add(item);
-   }
-   
-   public void removeItem(PrescriptionItem item){
-       items.remove(item);
-   }
+    private int id;
+    private Patient patient;
+    private Doctor doctor;
+    private LocalDate prescriptionDate;
+    
+    private List<PrescriptionItem> items = new ArrayList<>();
+    
+    public void addItem(PrescriptionItem item){
+        items.add(item);
+    }
+    
+    public void removeItem(PrescriptionItem item){
+        items.remove(item);
+    }
+    
+    public List<PrescriptionItem> getItems(){
+        return items;
+    }
 
     public int getId() {
         return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public Patient getPatient() {
         return patient;
@@ -47,14 +57,6 @@ public class Prescription {
     public void setPrescriptionDate(LocalDate prescriptionDate) {
         this.prescriptionDate = prescriptionDate;
     }
-
-    public List<PrescriptionItem> getItems() {
-        return items;
-    }
-
-    public void setItems(List items) {
-        this.items = items;
-    }
-  
-   
+    
+    
 }

@@ -1,33 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package hospital.models;
 
 import java.time.LocalDateTime;
 
-/**
- *
- * @author ERONMWON
- */
 public class NurseAssignment {
-    private int id; 
-    private Nurse nurse; 
-    private Patient patient; 
-    private LocalDateTime  assignmentDate; 
-    private LocalDateTime endDate; 
-    private String shift; 
-    private String status; 
-    private String notes; 
-    private Admission admission; 
+    private int id;
+    private Nurse nurse;
+    private Patient patient;
+    private LocalDateTime assignmentDate;
+    private LocalDateTime endDate;
+    private String shift;
+    private String status;
+    private String notes;
+    private Admission admission;
     
     public NurseAssignment(){
-    
     }
 
     public int getId() {
         return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
 
     public Nurse getNurse() {
         return nurse;
@@ -92,5 +90,6 @@ public class NurseAssignment {
     public void setAdmission(Admission admission) {
         this.admission = admission;
     }
+    
     
 }

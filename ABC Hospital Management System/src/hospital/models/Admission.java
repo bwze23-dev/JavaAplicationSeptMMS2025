@@ -4,19 +4,24 @@ package hospital.models;
 import java.time.LocalDate;
 
 public class Admission {
-   private int id; 
-   private Patient patient; 
-   private LocalDate admisssionDate;
-   private LocalDate dischargeDate; 
-   private String reason; 
-   private String status; 
-   
-   public Admission(){
-   
-   }
+    private int id;
+    private Patient patient;
+    private Doctor attendingDoctor;
+    private Bed bed;
+    private LocalDate admissionDate;
+    private LocalDate dischargeDate;
+    private String reason;
+    private String status;
+
+    public Admission(){
+    }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Patient getPatient() {
@@ -27,12 +32,28 @@ public class Admission {
         this.patient = patient;
     }
 
-    public LocalDate getAdmisssionDate() {
-        return admisssionDate;
+    public Doctor getAttendingDoctor() {
+        return attendingDoctor;
     }
 
-    public void setAdmisssionDate(LocalDate admisssionDate) {
-        this.admisssionDate = admisssionDate;
+    public void setAttendingDoctor(Doctor attendingDoctor) {
+        this.attendingDoctor = attendingDoctor;
+    }
+
+    public Bed getBed() {
+        return bed;
+    }
+
+    public void setBed(Bed bed) {
+        this.bed = bed;
+    }
+
+    public LocalDate getAdmissionDate() {
+        return admissionDate;
+    }
+
+    public void setAdmissionDate(LocalDate admissionDate) {
+        this.admissionDate = admissionDate;
     }
 
     public LocalDate getDischargeDate() {
@@ -58,6 +79,4 @@ public class Admission {
     public void setStatus(String status) {
         this.status = status;
     }
-   
-   
 }

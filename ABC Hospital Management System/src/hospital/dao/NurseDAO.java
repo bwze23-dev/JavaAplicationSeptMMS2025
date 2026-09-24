@@ -498,7 +498,7 @@ public class NurseDAO {
 
 
             int staffId =
-                    nurse.getStaffId();
+                    nurse.getStaffID();
 
 
             // =====================================================
@@ -906,7 +906,7 @@ public class NurseDAO {
 
 
         // STAFF ID
-        nurse.setStaffId(
+        nurse.setStaffID(
                 resultSet.getInt(
                         "StaffId"
                 )

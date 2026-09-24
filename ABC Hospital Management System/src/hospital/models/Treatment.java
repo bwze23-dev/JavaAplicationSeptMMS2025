@@ -1,33 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package hospital.models;
 
 import java.time.LocalDate;
 
-/**
- *
- * @author ERONMWON
- */
 public class Treatment {
-   private int id; 
-   private Patient patient; 
-   private Doctor doctor; 
-   private Diagnosis diagnosis; 
-   private LocalDate treatmentDate; 
-   private String treatmentName; 
-   private String description; 
-   private String notes; 
-   private String status;
-   
-   public Treatment(){
-   
-   }
+    private int id;
+    private Patient patient;
+    private Doctor doctor;
+    private Diagnosis diagnosis;
+    private LocalDate treatmentDate;
+    private String treatmentName;
+    private String description;
+    private String notes;
+    private String status;
+    
+    public Treatment(){
+    }
 
     public int getId() {
         return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
 
     public Patient getPatient() {
         return patient;
@@ -92,5 +90,6 @@ public class Treatment {
     public void setStatus(String status) {
         this.status = status;
     }
-   
+    
+    
 }

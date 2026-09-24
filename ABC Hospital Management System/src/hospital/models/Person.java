@@ -19,11 +19,9 @@ public abstract class Person {
         
     }
 
-    public Person(String firstName, 
-            String lastName, char gender, 
-            LocalDate dateOfBirth, String phone, String email, 
-            String street, String city, 
-            String country) {
+    public Person(String firstName, String lastName, char gender, LocalDate dateOfBirth,
+            String phone, String email, String street, 
+            String city, String country) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -38,6 +36,7 @@ public abstract class Person {
     public int getId() {
         return id;
     }
+
     public String getFirstName() {
         return firstName;
     }
@@ -109,6 +108,16 @@ public abstract class Person {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    
+
+    
     
     
 }
+
+
+
+
+
+

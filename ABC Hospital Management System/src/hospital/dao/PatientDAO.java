@@ -455,7 +455,7 @@ public class PatientDAO {
             int personId =
                     getPersonId(
                             connection,
-                            patient.getPatientId()
+                            patient.getPatientID()
                     );
 
             if (personId == -1) {
@@ -573,7 +573,7 @@ public class PatientDAO {
 
                 statement.setInt(
                         6,
-                        patient.getPatientId()
+                        patient.getPatientID()
                 );
 
                 statement.executeUpdate();
@@ -804,7 +804,7 @@ public class PatientDAO {
     // PATIENT ID
     // =========================================================
 
-    patient.setPatientId(
+    patient.setPatientID(
             resultSet.getInt("PatientId")
     );
 

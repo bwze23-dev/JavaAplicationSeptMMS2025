@@ -43,13 +43,13 @@ public class AppointmentDAO {
             // Patient ID
             stmt.setInt(
                     1,
-                    appointment.getPatient().getPatientId()
+                    appointment.getPatient().getPatientID()
             );
 
             // Doctor ID
             stmt.setInt(
                     2,
-                    appointment.getDoctor().getStaffId()
+                    appointment.getDoctor().getStaffID()
             );
 
             // LocalDateTime -> SQL Server DATETIME/DATETIME2
@@ -296,13 +296,13 @@ public class AppointmentDAO {
             // Patient ID
             stmt.setInt(
                     1,
-                    appointment.getPatient().getPatientId()
+                    appointment.getPatient().getPatientID()
             );
 
             // Doctor ID
             stmt.setInt(
                     2,
-                    appointment.getDoctor().getStaffId()
+                    appointment.getDoctor().getStaffID()
             );
 
             // LocalDateTime -> SQL Server
@@ -586,7 +586,7 @@ public class AppointmentDAO {
         Patient patient =
                 new Patient();
 
-        patient.setPatientId(
+        patient.setPatientID(
                 rs.getInt("PatientID")
         );
 
@@ -606,7 +606,7 @@ public class AppointmentDAO {
         Doctor doctor =
                 new Doctor();
 
-        doctor.setStaffId(
+        doctor.setStaffID(
                 rs.getInt("DoctorID")
         );
 

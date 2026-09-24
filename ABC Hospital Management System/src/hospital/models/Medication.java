@@ -1,21 +1,26 @@
 
 package hospital.models;
 
+
 public class Medication {
-  private int id; 
-  private String name; 
-  private String description; 
-  private String dosageForm;
-  private double price; 
-  private int quantityInStock; 
-  
-  public Medication(){
-  
-  }
+    private int id;
+    private String name;
+    private String description;
+    private String dosageForm;
+    private double price;
+    private int quantityInStock;
+    
+    public Medication(){
+    }
 
     public int getId() {
         return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public String getName() {
         return name;
@@ -56,6 +61,6 @@ public class Medication {
     public void setQuantityInStock(int quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
-  
-  
+    
+    
 }

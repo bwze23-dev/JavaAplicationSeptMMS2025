@@ -3,8 +3,9 @@ package hospital.models;
 
 import java.time.LocalDate;
 
+
 public class Patient extends Person{
-    private int patientId; 
+    private int patientID;
     private String bloodGroup;
     private String genotype;
     private String allergies;
@@ -15,23 +16,15 @@ public class Patient extends Person{
         
     }
 
-    public Patient(int patientId, 
-            String bloodGroup, 
-            String genotype, 
-            String allergies, 
-            String emergencyContact, 
-            String emergencyPhone, 
-            String firstName, 
-            String lastName, 
-            char gender, 
-            LocalDate dateOfBirth, 
-            String phone, 
-            String email, 
-            String street, 
-            String city, 
-            String country) {
-        super(firstName, lastName, gender, dateOfBirth, phone, email, street, city, country);
-        this.patientId = patientId;
+    public Patient(int patientID, String bloodGroup, String genotype, 
+            String allergies, String emergencyContact, 
+            String emergencyPhone, String firstName, String lastName,
+            char gender,
+            LocalDate dateOfBirth, String phone, String email, String street, 
+            String city, String country) {
+        super(firstName, lastName, gender, dateOfBirth, phone, email, street, 
+                city, country);
+        this.patientID = patientID;
         this.bloodGroup = bloodGroup;
         this.genotype = genotype;
         this.allergies = allergies;
@@ -39,9 +32,15 @@ public class Patient extends Person{
         this.emergencyPhone = emergencyPhone;
     }
 
-    public int getPatientId() {
-        return patientId;
+    
+
+    public int getPatientID() {
+        return patientID;
     }
+    
+ 
+
+    
 
     public String getBloodGroup() {
         return bloodGroup;
@@ -82,10 +81,11 @@ public class Patient extends Person{
     public void setEmergencyPhone(String emergencyPhone) {
         this.emergencyPhone = emergencyPhone;
     }
-
-    public void setPatientId(int aInt) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+       public void setPatientID(int patientID){
+        this.patientID = patientID;
     }
     
+   
     
 }

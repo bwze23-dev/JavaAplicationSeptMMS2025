@@ -2,9 +2,9 @@
 package hospital.models;
 
 public enum StaffRole {
-    STAFF, 
+    STAFF,
     DOCTOR,
     NURSE,
-    PHARMACIST, 
+    PHARMACIST,
     LABORATORY_TECHNICIAN
 }

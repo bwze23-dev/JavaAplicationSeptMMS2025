@@ -1,28 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package hospital.models;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- *
- * @author ERONMWON
- */
 public class Invoice {
-    private int id; 
-    private Patient patient; 
-    private LocalDate invoiceDate; 
-    private double totalAmount; 
+    private int id;
+    private Patient patient;
+    private LocalDate invoiceDate;
     private String status;
-    
+
+    private List<InvoiceItem> items = new ArrayList<>();
+
     public Invoice(){
-    
     }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Patient getPatient() {
@@ -41,14 +40,6 @@ public class Invoice {
         this.invoiceDate = invoiceDate;
     }
 
-    public double getTotalAmount() {
-        return totalAmount;
-    }
-
-    public void setTotalAmount(double totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -56,6 +47,24 @@ public class Invoice {
     public void setStatus(String status) {
         this.status = status;
     }
-    
-            
+
+    public List<InvoiceItem> getItems() {
+        return items;
+    }
+
+    public void addItem(InvoiceItem item){
+        items.add(item);
+    }
+
+    public void removeItem(InvoiceItem item){
+        items.remove(item);
+    }
+
+    public double getTotalAmount() {
+        double total = 0;
+        for (InvoiceItem item : items) {
+            total += item.getAmount();
+        }
+        return total;
+    }
 }

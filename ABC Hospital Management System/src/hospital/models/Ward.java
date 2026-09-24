@@ -4,21 +4,27 @@ package hospital.models;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Ward {
     private int id;
-    private String name; 
-    private String wardType; 
+    private String name;
+    private String wardType;
     private int capacity;
     
-    private List<Room> rooms = new ArrayList<>();
+    private List<Room> rooms = new ArrayList();
     
     public Ward(){
-    
     }
 
     public int getId() {
         return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
 
     public String getName() {
         return name;
@@ -44,7 +50,7 @@ public class Ward {
         this.capacity = capacity;
     }
     
-    public List<Room> getRooms(){
+    public List<Room> getRooms() {
         return rooms;
     }
     
@@ -56,4 +62,6 @@ public class Ward {
     public void removeRoom(Room room){
         rooms.remove(room);
     }
+    
+    
 }
